@@ -41,11 +41,22 @@ xbox.on('ddown:release', function(key){
 });
 
 xbox.on('rightshoulder:press', function(key){
+	client.clockwise(1);
 	client.animateLeds('rightMissile',5,5);
 });
 
+xbox.on('rightshoulder:release', function(key){
+	client.clockwise(0);
+});
+
+
 xbox.on('leftshoulder:press', function(key){
+	client.counterClockwise(1);
 	client.animateLeds('leftMissile',5,5);
+});
+
+xbox.on('leftshoulder:release', function(key){
+	client.counterClockwise(0);
 });
 
 xbox.on('xboxbutton:press', function (key) {
